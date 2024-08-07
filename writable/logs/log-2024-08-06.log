@@ -1,0 +1,72 @@
+ERROR - 2024-08-06 09:56:44 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\server\htdocs\clinisoft\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\server\htdocs\clinisoft\system\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `product...', 0)
+#1 C:\server\htdocs\clinisoft\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `product...')
+#2 C:\server\htdocs\clinisoft\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `product...')
+#3 C:\server\htdocs\clinisoft\system\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `product...', Array, false)
+#4 C:\server\htdocs\clinisoft\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\server\htdocs\clinisoft\system\BaseModel.php(1028): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\server\htdocs\clinisoft\system\Model.php(865): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\server\htdocs\clinisoft\app\Controllers\ProductController.php(46): CodeIgniter\Model->update('2', Array)
+#8 C:\server\htdocs\clinisoft\system\CodeIgniter.php(933): App\Controllers\ProductController->update('2')
+#9 C:\server\htdocs\clinisoft\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+#10 C:\server\htdocs\clinisoft\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\server\htdocs\clinisoft\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\server\htdocs\clinisoft\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\server\htdocs\clinisoft\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-08-06 09:56:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+[Method: POST, Route: products/update/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `name` = :name:, `description` = :description:, `price` = :price:, `updated_at` = :updated_at:
+WHERE `products`.`id` IN :products.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\ProductController.php(46): CodeIgniter\Model->update('2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->update('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-08-06 09:56:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `name` = \'Cartucchos Epson\', `description` = \'5615 color\', `price` = \'17\', `updated_at` = \'06-08-2024 09:56:44\'
+WHERE `products`.`id` IN (\'2\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `name` = \'Cartucchos Epson\', `description` = \'5615 color\', `price` = \'17\', `updated_at` = \'06-08-2024 09:56:44\'
+WHERE `products`.`id` IN (\'2\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `name` = :name:, `description` = :description:, `price` = :price:, `updated_at` = :updated_at:
+WHERE `products`.`id` IN :products.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\ProductController.php(46): CodeIgniter\Model->update('2', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->update('2')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-08-06 09:56:45 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `products` SET `name` = \'Cartucchos Epson\', `description` = \'5615 color\', `price` = \'17\', `updated_at` = \'06-08-2024 09:56:44\'
+WHERE `products`.`id` IN (\'2\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `name` = \'Cartucchos Epson\', `description` = \'5615 color\', `price` = \'17\', `updated_at` = \'06-08-2024 09:56:44\'
+WHERE `products`.`id` IN (\'2\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `name` = \'Cartucchos Epson\', `description` = \'5615 color\', `price` = \'17\', `updated_at` = \'06-08-2024 09:56:44\'
+WHERE `products`.`id` IN (\'2\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2508): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `name` = :name:, `description` = :description:, `price` = :price:, `updated_at` = :updated_at:
+WHERE `products`.`id` IN :products.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\ProductController.php(46): CodeIgniter\Model->update('2', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductController->update('2')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-08-06 14:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-08-06 14:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -26,12 +26,19 @@ $routes->post('/bonita/startProcess', 'BonitaController::startProcess');
 $routes->post('/bonita/executeTask', 'BonitaController::executeTask');
 /** inicio de filtro por roles */
 
+
 $routes->get('admin/dashboard', 'AdminController::dashboard', ['filter' => 'permission:admin_access']);
 
 /**  fin de filtro por roles*/
  
+$routes->get('/products', 'ProductController::index');
+$routes->get('/products/create', 'ProductController::create');
+$routes->post('/products/store', 'ProductController::store');
+$routes->get('/products/edit/(:num)', 'ProductController::edit/$1');
+$routes->post('/products/update/(:num)', 'ProductController::update/$1');
+$routes->get('/products/delete/(:num)', 'ProductController::delete/$1');
 
-
+$routes->get('wso2', 'Ws2Controller::index');
 
 /*fin de rutas de bonita*/
 

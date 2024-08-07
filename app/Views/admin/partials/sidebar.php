@@ -172,6 +172,18 @@
                     </a>
                 </li> 
 
+                <li class="nav-item">
+                    <a href="<?= base_url('/products'); ?>" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Productos
+                        </p>
+                    </a>
+                </li>
+
+
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
